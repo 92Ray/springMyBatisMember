@@ -189,11 +189,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="number"]{
 				<label for="name">NAME</label> <input type="text" id="name"
 					name="name" placeholder="닉네임을 입력하세요" required>
 			</div>
-			
-			<div class="form-group">
-				<label for="coin">COIN</label> <input type="number" id="coin"
-					name="coin" placeholder="숫자만 입력하세요">
-			</div>
 
 			<div class="btn-area">
 				<a href="/member/memberList" class="btn-list">회원 목록</a>

@@ -167,7 +167,7 @@
 <body>
 <div class="container">
     <div class="header-box">
-        <h1>BOARD <span>LIST</span></h1>
+        <h1>MEMBER <span>LIST</span></h1>
         <div class="btn-group">
             <c:choose>
                 <c:when test="${not empty sessionScope.loginUser}">
@@ -175,7 +175,7 @@
                         ${sessionScope.loginUser.nickName} 님 환영합니다
                     </span>
                     <!-- 글쓰기 버튼 (회원/비회원 모두 클릭 가능) -->
-                    <a href="/board/insertForm" class="btn">New Mission</a>
+                    <a href="/member/insertForm" class="btn">New Mission</a>
                     <!-- 로그아웃 -->
                     <a href="/user/logout" class="btn">Logout</a>
                     <!-- 회원탈퇴 -->
@@ -185,50 +185,40 @@
                     <a href="/user/loginForm" class="btn">Login</a>
                     <a href="/user/joinForm" class="btn">Sign Up</a>
                     <!-- 글쓰기 버튼 (비회원도 가능) -->
-                    <a href="/board/insertForm" class="btn">New Mission</a>
+                    <a href="/member/insertForm" class="btn">New Mission</a>
                 </c:otherwise>
             </c:choose>
         </div>
-    </div>
-
-    <div class="search-container">
-        <form action="/board/search" method="get" class="search-form">
-            <select name="searchType" class="search-select">
-                <option value="title">제목</option>
-                <option value="writer">작성자</option>
-                <option value="content">내용</option>
-            </select>
-            <input type="text" name="keyword" class="search-input" placeholder="Search mission...">
-            <button type="submit" class="btn-search">검색</button>
-        </form>
     </div>
 
     <table class="t1-table">
         <thead>
             <tr>
                 <th width="10%">No</th>
-                <th width="50%">Title</th>
-                <th width="15%">Writer</th>
-                <th width="25%">Date</th>
+                <th width="20%">ID</th>
+                <th width="20%">PW</th>
+                <th width="20%">NAME</th>
+                <th width="30%">REGDATE</th>
             </tr>
         </thead>
         <tbody>
             <c:choose>
-                <c:when test="${not empty boardList}">
-                    <c:forEach var="board" items="${boardList}">
+                <c:when test="${not empty memberList}">
+                    <c:forEach var="member" items="${memberList}">
                         <tr>
-                            <td>${board.no}</td>
+                            <td>${member.no}</td>
                             <td class="title-cell">
-                                <a href="/board/detail?no=${board.no}">${board.title}</a>
+                                <a href="/member/detail?no=${member.no}">${member.id}</a>
                             </td>
-                            <td>${board.writer}</td>
-                            <td><fmt:formatDate value="${board.regDate}" pattern="yyyy.MM.dd" /></td>
+                            <td>${member.pw}</td>
+                            <td>${member.name}</td>
+                            <td><fmt:formatDate value="${member.regDate}" pattern="yyyy.MM.dd" /></td>
                         </tr>
                     </c:forEach>
                 </c:when>
                 <c:otherwise>
                     <tr>
-                        <td colspan="4" style="padding:50px; color:#555;">작성된 게시글이 없습니다.</td>
+                        <td colspan="5" style="padding:50px; color:#555;">등록된 회원이 없습니다.</td>
                     </tr>
                 </c:otherwise>
             </c:choose>
