@@ -98,8 +98,18 @@
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 		</dependency>
-		
-		
+
+
+		<dependency>
+			<groupId>com.board</groupId>
+			<artifactId>springJDBCBoard</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.board</groupId>
+			<artifactId>springJPABoard</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
