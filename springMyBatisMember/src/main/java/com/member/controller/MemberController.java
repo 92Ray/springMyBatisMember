@@ -1,4 +1,4 @@
-package com.zeus.controller;
+package com.member.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zeus.domain.Member;
-import com.zeus.service.MemberService;
+import com.member.domain.Member;
+import com.member.service.MemberService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.zeus.service;
+package com.member.service;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zeus.domain.Member;
-import com.zeus.domain.MemberAuth;
-import com.zeus.mapper.MemberMapper;
+import com.member.domain.Member;
+import com.member.domain.MemberAuth;
+import com.member.mapper.MemberMapper;
 
 @Service
 public class MemberServiceImpl implements MemberService {

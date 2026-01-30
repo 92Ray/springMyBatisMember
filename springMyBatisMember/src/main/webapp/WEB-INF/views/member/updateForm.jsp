@@ -138,8 +138,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 /* 권한 선택 영역 스타일 */
 .btn-form {
-	padding-top: 20px;
-	background: #1a1a1a;
+	padding-top: 20px; background : #1a1a1a;
 	border-top: 1px solid #333;
 	display: flex;
 	flex-direction: column;
@@ -217,7 +216,8 @@ input[type="text"]:focus, input[type="password"]:focus {
 	<div class="write-container">
 		<div class="header">
 			<h1>
-				회원정보<br> <span>${member.id}님의 회원 정보 수정</span>
+				회원정보<br>
+				<span>${member.id}님의 회원 정보 수정</span>
 			</h1>
 		</div>
 		<form:form modelAttribute="member" action="/member/update"
@@ -230,16 +230,16 @@ input[type="text"]:focus, input[type="password"]:focus {
 				<label for="id">회원ID</label> <input type="text" id="id" name="id"
 					value="${member.id}" style="color: #989898" readonly>
 			</div>
+			<div class="form-group">
+				<label for="pw">회원PW</label> <input type="password" id="pw"
+					name="pw" value="${member.pw}" required>
+			</div>
 
 			<div class="form-group">
 				<label for="name">회원NAME</label> <input type="text" id="name"
 					name="name" value="${member.name}" required>
 			</div>
 
-			<div class="form-group">
-				<label for="pw">회원PW</label> <input type="password" id="pw"
-					name="pw" value="${member.pw}" required>
-			</div>
 			<div class="btn-form">
 
 				<form:hidden path="no" />
@@ -263,15 +263,13 @@ input[type="text"]:focus, input[type="password"]:focus {
 				</form:select>
 			</div>
 
-			<div class="btn-area">
-				<a href="/member/memberList" class="btn-list">회원리스트</a>
-				<button type="submit" class="btn btn-submit">회원수정</button>
-				<button type="reset" class="btn btn-reset">수정취소</button>
-			</div>
+		<div class="btn-area">
+			<a href="/member/memberList" class="btn-list">회원리스트</a>
+			<button type="submit" class="btn btn-submit">회원수정</button>
+			<button type="reset" class="btn btn-reset">수정취소</button>
+		</div>
 		</form:form>
 
-		<div class="bottom-deco">[ SYSTEM: READY TO TRANSMIT DATA TO
-			JDBCBOARD ]</div>
 	</div>
 
 </body>

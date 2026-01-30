@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -177,17 +176,22 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="number"]{
 		<form action="/member/insert" method="post">
 			<div class="form-group">
 				<label for="id">ID</label> <input type="text"
-					id="id" name="id" placeholder="아이디를 입력하세요" required>
+					id="id" name="id" placeholder="id를 입력하세요" required>
 			</div>
 
 			<div class="form-group">
 				<label for="pw">PW</label> <input type="password" id="pw"
-					name="pw" placeholder="비밀번호를 입력하세요" required>
+					name="pw" placeholder="pw를 입력하세요" required>
 			</div>
 			
 			<div class="form-group">
 				<label for="name">NAME</label> <input type="text" id="name"
-					name="name" placeholder="닉네임을 입력하세요" required>
+					name="name" placeholder="이름을 입력하세요" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="coin">COIN</label> <input type="number" id="coin"
+					name="coin" placeholder="숫자만 입력하세요">
 			</div>
 
 			<div class="btn-area">

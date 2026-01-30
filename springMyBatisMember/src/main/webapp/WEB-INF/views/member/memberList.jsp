@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>T1 Community | Board List</title>
+<title>T1 Community | Member List</title>
 <style>
     :root {
         --t1-red: #E2012D;
@@ -32,7 +32,7 @@
     .header-box {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         border-bottom: 3px solid var(--t1-red);
         padding-bottom: 15px;
         margin-bottom: 30px;
@@ -47,24 +47,18 @@
 
     .header-box h1 span { color: var(--t1-red); }
 
-    .btn-group {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .btn {
+    .btn-write {
         background: var(--t1-red);
         color: white;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 10px 25px;
         font-weight: bold;
         border-radius: 4px;
         transition: 0.3s;
         text-transform: uppercase;
     }
 
-    .btn:hover {
+    .btn-write:hover {
         background: white;
         color: var(--t1-red);
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
@@ -97,15 +91,24 @@
 
     .t1-table tr:last-child td { border-bottom: none; }
 
+    /* Hover Effect */
     .t1-table tbody tr { transition: 0.2s; cursor: pointer; }
     .t1-table tbody tr:hover {
         background-color: var(--t1-table-hover);
         color: var(--t1-red);
     }
 
-    .title-cell { text-align: left !important; padding-left: 30px !important; }
+    .title-cell { text-align: center !important; padding-left: 15px !important; }
     .title-cell a { color: inherit; text-decoration: none; font-weight: 500; }
 
+    /* Pagination / Footer */
+    .table-footer {
+        margin-top: 20px;
+        text-align: right;
+        font-size: 0.8rem;
+        color: #555;
+        font-family: monospace;
+    }
     /* Search Bar Styles */
     .search-container {
         display: flex;
@@ -162,33 +165,33 @@
         color: white;
         text-shadow: 0 0 5px var(--t1-red);
     }
+    .btn-group {
+        display: flex;
+        gap: 10px; /* 버튼 사이의 간격 */
+    }
 </style>
 </head>
 <body>
-<div class="container">
+    
+    <div class="container">
     <div class="header-box">
-        <h1>MEMBER <span>LIST</span></h1>
-        <div class="btn-group">
-            <c:choose>
-                <c:when test="${not empty sessionScope.loginUser}">
-                    <span style="color:#C69C6D; padding:0 10px;">
-                        ${sessionScope.loginUser.nickName} 님 환영합니다
-                    </span>
-                    <!-- 글쓰기 버튼 (회원/비회원 모두 클릭 가능) -->
-                    <a href="/member/insertForm" class="btn">New Mission</a>
-                    <!-- 로그아웃 -->
-                    <a href="/user/logout" class="btn">Logout</a>
-                    <!-- 회원탈퇴 -->
-                    <a href="/user/delete" class="btn" onclick="return confirm('정말 탈퇴하시겠습니까?');">회원탈퇴</a>
-                </c:when>
-                <c:otherwise>
-                    <a href="/user/loginForm" class="btn">Login</a>
-                    <a href="/user/joinForm" class="btn">Sign Up</a>
-                    <!-- 글쓰기 버튼 (비회원도 가능) -->
-                    <a href="/member/insertForm" class="btn">New Mission</a>
-                </c:otherwise>
-            </c:choose>
-        </div>
+    <h1>BOARD <span>LIST</span></h1>
+    
+    <div class="btn-group">
+        <a href="/member/memberList" class="btn-write">List View</a>
+        <a href="/member/insertForm" class="btn-write">회원가입</a>
+    </div>
+</div>
+
+    <div class="search-container">
+        <form action="/member/search" method="get" class="search-form">
+            <select name="searchType" class="search-select">
+                <option value="id">ID</option>
+                <option value="name">NAME</option>
+            </select>
+            <input type="text" name="keyword" class="search-input" placeholder="Search mission...">
+            <button type="submit" class="btn-search">검색</button>
+        </form>
     </div>
 
     <table class="t1-table">
@@ -198,7 +201,8 @@
                 <th width="20%">ID</th>
                 <th width="20%">PW</th>
                 <th width="20%">NAME</th>
-                <th width="30%">REGDATE</th>
+                <th width="10%">COIN</th>
+                <th width="20%">DATE</th>
             </tr>
         </thead>
         <tbody>
@@ -212,19 +216,24 @@
                             </td>
                             <td>${member.pw}</td>
                             <td>${member.name}</td>
+                            <td>${member.coin}</td>
                             <td><fmt:formatDate value="${member.regDate}" pattern="yyyy.MM.dd" /></td>
                         </tr>
                     </c:forEach>
                 </c:when>
                 <c:otherwise>
                     <tr>
-                        <td colspan="5" style="padding:50px; color:#555;">등록된 회원이 없습니다.</td>
+                        <td colspan="6" style="padding: 50px; color: #555;">가입된 회원이 없습니다.</td>
                     </tr>
                 </c:otherwise>
             </c:choose>
         </tbody>
     </table>
 
+    <div class="table-footer">
+        [ SYSTEM: CONNECTED TO JDBCBOARD_SEQ.NEXTVAL ]
+    </div>
 </div>
+
 </body>
 </html>

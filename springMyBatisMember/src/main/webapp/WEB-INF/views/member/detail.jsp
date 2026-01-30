@@ -174,7 +174,7 @@ body {
 .footer-deco {
 	padding: 15px;
 	text-align: center;
-	font-size: 0.75rem;
+	font-size: 0.75re
 	color: #444;
 	background: #0f0f0f;
 }
@@ -196,19 +196,19 @@ body {
 			<form:form modelAttribute="member">
 				<form:hidden path="no" />
 				<form:select path="authList[0].auth" disabled="true">
-					<form:option value="" label="=== 선택해 주세요 ===" />
+					<form:option value="" label="=== 부여된 권한이 없습니다 ===" />
 					<form:option value="ROLE_USER" label="사용자" />
 					<form:option value="ROLE_MEMBER" label="회원" />
 					<form:option value="ROLE_ADMIN" label="관리자" />
 				</form:select>
 				<form:select path="authList[1].auth" disabled="true">
-					<form:option value="" label="=== 선택해 주세요 ===" />
+					<form:option value="" label="=== 부여된 권한이 없습니다 ===" />
 					<form:option value="ROLE_USER" label="사용자" />
 					<form:option value="ROLE_MEMBER" label="회원" />
 					<form:option value="ROLE_ADMIN" label="관리자" />
 				</form:select>
 				<form:select path="authList[2].auth" disabled="true">
-					<form:option value="" label="=== 선택해 주세요 ===" />
+					<form:option value="" label="=== 부여된 권한이 없습니다 ===" />
 					<form:option value="ROLE_USER" label="사용자" />
 					<form:option value="ROLE_MEMBER" label="회원" />
 					<form:option value="ROLE_ADMIN" label="관리자" />
@@ -220,9 +220,9 @@ body {
 			<a href="/member/memberList" class="btn btn-list">회원리스트</a>
 
 			<div class="btn-group">
-				<a href="/member/updateForm?no=${member.no}" class="btn btn-edit">글	수정하기</a> <a href="/member/delete?no=${member.no}"
-					class="btn btn-delete" onclick="return confirm('정말 삭제하시겠습니까?')">회원
-					삭제하기</a>
+				<a href="/member/updateForm?no=${member.no}" class="btn btn-edit">회원수정</a>
+				<a href="/member/delete?no=${member.no}"
+					class="btn btn-delete" onclick="return confirm('정말 삭제하시겠습니까?')">회원탈퇴</a>
 			</div>
 		</div>
 

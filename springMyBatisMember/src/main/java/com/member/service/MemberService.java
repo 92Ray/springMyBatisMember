@@ -1,8 +1,8 @@
-package com.zeus.service;
+package com.member.service;
 
 import java.util.List;
 
-import com.zeus.domain.Member;
+import com.member.domain.Member;
 
 public interface MemberService {
 	//가입 -> 동시가입 (회원 및 회원 권한)

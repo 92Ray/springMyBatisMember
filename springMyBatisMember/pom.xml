@@ -8,11 +8,11 @@
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.board</groupId>
-	<artifactId>springMyBatisMember</artifactId>
+	<groupId>com.member</groupId>
+	<artifactId>SpringMyBatisMember</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>springMyBatisMember</name>
+	<name>SpringMyBatisMember</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -82,8 +82,6 @@
 			<version>4.0.1</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
 		<!-- jasper 의존성 설정 jsp -> servlet 변환 -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
@@ -97,18 +95,6 @@
 		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.board</groupId>
-			<artifactId>springJDBCBoard</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.board</groupId>
-			<artifactId>springJPABoard</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

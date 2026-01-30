@@ -94,7 +94,7 @@
     <p>${message}</p>
 
     <a href="/member/insertForm" class="btn-list">New Member Insert</a>
-    <a href="/member/memberlist" class="btn-list">View Member List</a>
+    <a href="/member/memberList" class="btn-list">View Member List</a>
 
 </div>
 

@@ -93,8 +93,8 @@
     <h2>MISSION <span style="color:var(--t1-red)">FAILED</span></h2>
     <p>${message}<br>다시 시도해 주시기 바랍니다.</p>
 
-    <a href="/member/insertForm" class="btn-list">New Member Insert</a>
-    <a href="/member/memberlist" class="btn-list">View Member List</a>
+    <a href="/member/insertForm" class="btn-list">New Board Insert</a>
+    <a href="/member/memberList" class="btn-list">View Board List</a>
 
 </div>
 
